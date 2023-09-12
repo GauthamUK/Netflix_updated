@@ -1,0 +1,154 @@
+{%load static%}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/plans.css' %}">
+    <script src="../static/css/js/plans.js"></script>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body style="background-color:rgb(26, 26, 26);">
+    <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" width=124.77 height=75 alt="">
+
+    <div class="btn-checkout">
+        <span class="fa fa-shopping-cart cart-icon"></span>
+        <span>continue to checkout</span>
+      </div>
+      <div class="checkout-form">
+        <div class="card-wrapper">
+        </div>
+        <div class="s10"></div>
+        <div class="form-container active">
+            <div class="row">
+              <div class="col-xs-12">
+                <input placeholder="Full name" type="text" name="name" class="form-control">
+              </div>
+            </div>
+            <div class="s10"></div>
+            <div class="row">
+              <div class="col-xs-12">
+                <input placeholder="Card number" type="text" name="number" class="form-control">
+              </div>
+            </div>
+            <div class="s10"></div>
+            <div class="row">
+              <div class="col-xs-6">
+                <input placeholder="MM/YY" type="text" name="expiry" class="form-control">
+              </div>
+      
+              <div class="col-xs-6">
+                <input placeholder="CVC" type="text" name="cvc" class="form-control">
+              </div>
+            </div>
+            <div class="s10"></div>
+            <div class="row">
+      
+              <div class="col-xs-12">
+                <a href="{%url 'h'%}" class="btn btn-submit postfix text-light" style="background-color: #e50914;">Continue</a>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      
+      <div class="overlay"></div>
+      
+      <div class="demo-container">
+        <div class="demo-container-inner">
+          <div class="container">
+      
+            <h1>Choose the plan that’s right for you</h1>
+            <div class="row">
+              <div class="col-xs-6 col-md-4">
+                <div class="card text-light" style="background-color: rgb(26, 26, 26);border: 1px solid rgb(216 20 25);
+                border-radius: 1.25rem;padding: 17px;">
+                  <div class="card-block">
+                    <h4 class="card-title">Mobile</h4>
+                    <p class="card-text">Video quality &nbsp;&nbsp;&nbsp;&nbsp;
+                        :Good</p>
+                    <p class="card-text">Resolution  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:480p</p>
+                    <p class="card-text">Devices&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Mobile,Tablet</p>
+                    </div>
+                  <div class="card-block">
+                    <div class="pull-xs-right flipable">
+                      <div class="flipable-group">
+                        <button class="btn  add-to-cart" style="background-color: #e50914;"><span class="material-symbols-outlined">
+                          shopping_cart
+                          </span></button>
+                        <button class="btn remove-from-cart" style="background-color: #ffffff;"><span class="material-symbols-outlined">
+                          remove
+                          </span></button>
+                      </div>
+                    </div>
+                    <p class="card-text cart-price">₹ 149</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-md-4">
+                <div class="card text-light" style="background-color: rgb(26, 26, 26);border: 1px solid rgb(216 20 25);
+                border-radius: 1.25rem;padding: 17px;">
+                    <div class="card-block">
+                        <h4 class="card-title">Basic</h4>
+                        <p class="card-text">Video quality &nbsp;&nbsp;&nbsp;&nbsp;:Good</p>
+                        <p class="card-text">Resolution  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:480p</p>
+                        <p class="card-text">Devices &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Mobile,Tablet,Computer,TV</p>
+                        </div>
+                  <div class="card-block">
+                    <div class="pull-xs-right flipable">
+                      <div class="flipable-group">
+                        <button class="btn add-to-cart" style="background-color: #e50914;"><span class="material-symbols-outlined">
+                          shopping_cart
+                          </span></button>
+                        <button class="btn remove-from-cart" style="background-color: #ffffff;"><span class="material-symbols-outlined">
+                          remove
+                          </span></button>
+                      </div>
+                    </div>
+                    <p class="card-text cart-price">₹ 199</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 hidden-sm-down">
+                <div class="card text-light" style="background-color: rgb(26, 26, 26);border: 1px solid rgb(216 20 25);
+                border-radius: 1.25rem;padding: 17px;">
+                    <div class="card-block">
+                        <h4 class="card-title">Standard</h4>
+                        <p class="card-text">Video quality &nbsp;&nbsp;&nbsp;&nbsp;:Good</p>
+                        <p class="card-text">Resolution  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:720p</p>
+                        <p class="card-text">Devices &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Mobile,Tablet,Computer,TV</p>
+                        </div>
+                  <div class="card-block">
+                    <div class="pull-xs-right flipable">
+                      <div class="flipable-group">
+                        <button class="btn  add-to-cart" style="background-color: #e50914;"><span class="material-symbols-outlined">
+                          shopping_cart
+                          </span></button>
+                        <button class="btn  remove-from-cart" style="background-color: #ffffff;"><span class="material-symbols-outlined">
+                          remove
+                          </span></button>
+                      </div>
+                    </div>
+                    <p class="card-text cart-price">₹ 499</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+</body>
+</html>

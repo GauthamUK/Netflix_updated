@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+{% block login %}
+
+<div class="login-container">
+    <form class="login text-light" action="" method="post">
+        {% csrf_token %}
+
+        <h1 class="login__title">Sign Up</h1>
+
+        <div class="login__form-group">
+            <label class="login__label">First Name</label>
+            {{ form.first_name }}
+        </div>
+
+        <div class="login__form-group">
+            <label class="login__label">Last Name</label>
+            {{ form.last_name }}
+        </div>
+
+        <div class="login__form-group">
+            <label class="login__label">Email</label>
+            {{ form.email }}
+        </div>
+
+        <div class="login__form-group">
+            <label class="login__label">Username</label>
+            {{ form.username }}
+        </div>
+
+        <div class="login__form-group">
+            <label class="login__label">Password</label>
+            {{ form.password1 }}
+        </div>
+
+        <div class="login__form-group">
+            <label class="login__label">Confirm Password</label>
+            {{ form.password2 }}
+        </div>
+
+        <button class="button login__submit login__sign-in">Sign Up</button>
+
+        <div class="login__secondary-cta">
+            Already have an account? <a href="{% url 'h' %}" class="login__secondary-cta__text login__secondary-cta__text--need-help">Sign In</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login {
+        width: 100%;
+        max-width: 450px; /* Adjust the maximum width as needed */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login__form-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px; /* Add spacing between each group */
+    }
+
+    .login__label {
+        font-size: 0.9rem;
+        color: white;
+        flex: 1;
+    }
+
+    .login__input {
+        flex: 2;
+        width: 100%;
+        background: #333;
+        border-radius: 4px;
+        border: none;
+        opacity: 1;
+        font-size: 1rem;
+        color: #fff;
+        line-height: 50px;
+        padding: 12px 18px 0;
+    }
+</style>
+
+{% endblock login %}

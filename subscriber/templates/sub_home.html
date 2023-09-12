@@ -1,0 +1,18 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+  <video autoplay="autoplay" width="100%" height="auto">
+    <source src="../static/Narcos.mp4" type="video/mp4">
+  </video>
+
+  <div style="margin-left: 10px;">
+    <h1 id="mov" class="text-light">New Releases</h1>
+    {% for i in movie %}
+      <a href="{% url 'mdet' i.id %}" class="btn" style="margin-bottom: 54.64px;">
+        <img width="285.33" height="165.16" src="{{i.image.url}}">
+      </a>
+    {% endfor %}
+  </div>
+
+{% endblock content %}

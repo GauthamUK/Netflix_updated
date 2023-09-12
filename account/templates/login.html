@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+{% block login %}
+
+<div class="login-container">
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="login">
+            <h1 class="login__title">Sign In</h1>
+            
+            <div class="form-group">
+                <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" class="form-control" placeholder="Username" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="{{ form.password.name }}" id="{{ form.password.id_for_label }}" class="form-control" placeholder="Password" required>
+            </div>
+
+            <button class="button login__submit login__sign-in" style="margin-top: 50px; width: 100% !important;">Sign In</button>
+            
+            <div class="login__secondary-cta">
+                <a class="login__secondary-cta__text" href="#">Remember me</a>
+                <a class="login__secondary-cta__text login__secondary-cta__text--need-help" href="#">Need help?</a>
+            </div>
+            
+            <div class="login__secondary-cta__text" style="margin-top: 50px;">
+                New to Netflix? <a href="{% url 'reg' %}" class="text-light"><strong>Sign up now</strong></a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login {
+        width: 100%;
+        max-width: 450px; /* Adjust the maximum width as needed */
+        text-align: center;
+    }
+
+    .alert {
+        margin-bottom: 20px; /* Add spacing between alerts */
+    }
+
+    body .login__group__input {
+        width: 90%;
+        position: relative;
+        z-index: 100;
+        background: #333;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: none;
+        opacity: 1;
+        font-size: 1rem;
+        color: #fff;
+        line-height: 50px;
+        padding: 12px 24px 0;
+    }
+
+    .form-control {
+        height: 61.3px;
+        width: 100%;
+        background: #333;
+        border-radius: 4px;
+        border: none;
+        opacity: 1;
+        font-size: 1rem;
+        color: #fff;
+        line-height: 50px;
+        padding: 12px 24px 0;
+        margin-top: 5px; /* Reduce the gap between input and button */
+    }
+    body .login {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    width: 450px;
+    height: 660px;
+    padding: 112px 68px 40px;
+}
+</style>
+
+{% endblock login %}

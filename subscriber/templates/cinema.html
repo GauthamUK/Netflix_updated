@@ -1,0 +1,12 @@
+{% extends 'navbar.html' %}
+{% block content %}  
+
+<div style="position: absolute;top: 70px;">
+    {%for i in cinema%}
+    <a href="{% url 'mdet' i.movie.id %}" class="btn">
+        <img width="285.33" height="165.16" src="{{i.movie.image.url}}">
+    </a >
+    {%endfor%}
+</div>
+
+{% endblock content %}

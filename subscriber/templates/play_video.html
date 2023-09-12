@@ -1,0 +1,11 @@
+{% extends 'navbar.html' %}
+{% block content %}   
+    <video width="100%" height="900px" controls autoplay>
+        <source src="{{ video.video_file.url }}" type="video/mp4">
+    </video>
+    <p><a href="{% url 'mdet' video.movie.pk %}"><span style="position: absolute;top: 80px; left: 20px; color: white;" class="material-symbols-outlined">
+        arrow_back_ios
+        </span></a></p>
+{% endblock content %}
+
+

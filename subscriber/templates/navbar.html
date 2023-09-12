@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,0,0" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-tn7IE5CD9Fb68cftig5Rv9A+k7PRF3NUyr8NlR95/WggSgZk7L7/bSLcfh3vcCSq"
+        crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
+        integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <style>
+        .sub-nav a {
+            color: var(--light);
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .sub-nav a:hover {
+            color: var(--dark);
+        }
+
+        #nav {
+            height: 68px;
+            align-items: center;
+            display: flex;
+            font-size: 1.2rem;
+            padding: 0 4%;
+            /* position: relative; */
+            transition: background-color 0.4s, opacity 0.4s;
+            background-color: transparent;
+        }
+
+        #nav.scrolled {
+            background-color: rgb(0, 0, 0); /* Change to your desired background color */
+            opacity: 0.9; /* Adjust the opacity as needed */
+        }
+
+        /* save icon styling */
+        .favorite-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Style for the filled save symbol logo (Font Awesome) */
+        .save-icon {
+            color: #fff;
+        }
+
+        /* Style for the active (liked) button */
+        .active .save-icon {
+            color: #ff0000; /* Change to your desired active color */
+        }
+
+        /* style for close button on mylist */
+        .closeModal {
+            position: absolute;
+            top: 168px;
+            left: 271px;
+            right: 20px;
+            width: 24px;
+            height: 24px;
+            opacity: 0.2;
+            cursor: pointer;
+            transition: opacity ease 0.5s;
+        }
+
+        .closeModal:hover {
+            opacity: 1;
+        }
+
+        .closeModal::before,
+        .closeModal::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: #ffffff;
+        }
+
+        .closeModal::before {
+            transform: rotate(45deg);
+        }
+
+        .closeModal::after {
+            transform: rotate(-45deg);
+        }
+
+        /* Move items to the right end of the navbar */
+        .navbar-right {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Adjust the spacing as needed */
+        }
+
+        /* Apply custom color to search and bell icons */
+        .search-icon,
+        .bell-icon {
+            color: #f8f9fa !important;
+        }
+
+        /* Apply the same color as "Home" to the sub-nav items */
+        .sub-nav a {
+            color: var(--light);
+        }
+
+        
+    </style>
+    <script>
+        window.addEventListener("scroll", function () {
+            const nav = document.getElementById("nav");
+            if (window.scrollY > 50) {
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+    </script>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <nav id="nav" class="nav justify-content fixed-top">
+        <a class="navbar-brand" href="#"><img
+                src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" width="93.25" height="31"
+                alt=""></a>
+        <a class="nav-link text-light" href="{% url 'subhome'%}">Home</a>
+        <a class="nav-link text-light" href="{% url 'cinema'%}">Movies</a>
+        <a class="nav-link text-light" href="{% url 'tvshow'%}">TV Shows</a>
+        <a class="nav-link text-light" href="#">New and Popular</a>
+        <a class="nav-link text-light" href="{% url 'mlist'%}">My List</a>
+        <!-- Move items to the right end of the navbar -->
+        <div class="navbar-right">
+            <a href="#" class="search-icon"><i class="fas fa-search sub-nav-logo"></i></a>
+            <a href="#" class="bell-icon"><i class="fas fa-bell sub-nav-logo"></i></a>
+            <a href="{% url 'watch_history'%}" class="material-symbols-outlined text-light"><span class="material-symbols-outlined">history</span></a>
+            <!-- <a class="nav-link text-light" href="{% url 'watch_history'%}">
+                <span class="material-symbols-outlined">
+                    history
+                    </span>
+            </a> -->
+            <a href="{% url 'lgout'%}" class="nav-link text-light">Logout</a>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+</body>
+
+</html>

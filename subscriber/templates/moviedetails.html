@@ -1,0 +1,51 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<p><a href="{% url 'subhome' %}"><span style="position: absolute;top:60px; left: 20px; color: white;" class="material-symbols-outlined">
+    arrow_back_ios
+    </span></a></p>
+<div class="row" style="position: absolute;top: 100px;">
+    <div class="col-5">
+{% for video in data.video_set.all %}
+
+    <a href="{% url 'play_video' video.id %}"><img src="{{data.image.url}}" alt="img" width="100%" height="450px"></a>
+
+{% endfor %}
+
+            
+    </div>
+    <div class="col">
+        <ul class="list-group jumbotron"style='background-color: #1a1a1a; border-radius: 0.5rem'>
+            <li style="padding: 0.75rem 3.25rem;
+            margin-bottom: -6px;
+            background-color: #1a1a1a;
+            border: 0;" class="list-group-item text-light">{{data.name}}</li>
+            <li style="padding: 0.75rem 3.25rem;
+            margin-bottom: -6px;
+            background-color: #1a1a1a;
+            border: 0;" class="list-group-item text-light">{{data.genre}}</li>
+            <li style="padding: 0.75rem 3.25rem;
+            margin-bottom: -6px;
+            background-color: #1a1a1a;
+            border: 0;" class="list-group-item text-light">{{data.release_date}}</li>
+            <li style="padding: 0.75rem 3.25rem;
+            margin-bottom: -6px;
+            background-color: #1a1a1a;
+            border: 0;" class="list-group-item text-light">{{data.description}}</li>
+
+            <a href="{%url 'alist' data.id%}">
+                <button id="favorite-button" class="favorite-button" onclick="toggleFavorite()" style="position:absolute; left: 91%;top: 16.45%;">
+                    <i class="save-icon far fa-bookmark"></i>
+                </button>
+            </a>
+        </ul>
+        
+    </div>
+
+</div>
+
+
+
+{% endblock content %}
+
+<!-- {% url 'play_video' video.id %} -->
