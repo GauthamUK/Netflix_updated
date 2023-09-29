@@ -105,3 +105,9 @@ class WatchHistoryView(ListView):
     def get_queryset(self):
         return WatchHistory.objects.filter(user=self.request.user)
 
+decs
+def removewatchlist(request,**kwargs):
+    wid=kwargs.get("id")
+    w=WatchHistory.objects.get(id=wid)
+    w.delete()
+    return redirect('watch_history')

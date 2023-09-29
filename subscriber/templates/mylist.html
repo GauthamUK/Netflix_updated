@@ -1,13 +1,15 @@
 {% extends 'navbar.html' %}
 {% block content %} 
-<div style="position: absolute;top: 76px;">
+<div style="position: absolute;top: 76px; left:125px;">
     <h1 class="text-light padding: 0 4%;" style="padding: 0 4%; margin-top: 10px;">Mylist</h1><br>
     {% for i  in myl%}
     
         <a href="{% url 'mdet' i.movie.id %}" class="btn"><img width="285.33" height="165.16" src="{{i.movie.image.url}}" alt=""></a>
         
-            <a href="{% url 'rlist' i.id%}" class="text-light " style="position: absolute; top: 168px;">&times;</a>
-        
+            <div style="display: inline;" ><a href="{% url 'rlist' i.id%}" class="text-light " >&times;</a></div>
+      
     {%endfor%}
 </div>
 {% endblock content %}
+
+

@@ -14,6 +14,8 @@ urlpatterns = [
     path('mlist',MylistView.as_view(),name='mlist'),
     path('rlist/<int:id>',removemylist,name='rlist'),
     path('watch_history/', WatchHistoryView.as_view(), name='watch_history'),
+    path('rwlist/<int:id>',removewatchlist,name='rwlist'),
+
 
 
 

@@ -1,19 +1,21 @@
 {% extends "navbar.html" %}
 
 {% block content %}
-<div style="position: absolute; top: 10%; left: 5%; color: white;">
-    <h2>Watch History</h2>
+<div style="position: absolute;top: 76px; left:125px;">
+    <h1 class="text-light padding: 0 4%;" style="padding: 0 4%; margin-top: 10px;">Watch History</h1>
     <br>
-    <div class="d-flex flex-row flex-nowrap overflow-x-auto">
         {% for item in watch_history %}
-            <div class="mr-4">
+            <div style="display: inline;" class="mr-4">
                 <a href="{% url 'mdet' item.movie.id %}">
-                    <img width="285.33px" height="165.16px" src="{{ item.movie.image.url }}" alt="{{ item.movie.name }}" class="img-fluid" >
+                    <img width="285.33px" height="165.16px" src="{{ item.movie.image.url }}" alt="{{ item.movie.name }}" class="img-fluid "style='margin-bottom: 25px;' >
                 </a>
             </div>
+            
         {% empty %}
             <p>No watch history available.</p>
         {% endfor %}
-    </div>
 </div>
-{% endblock %}
+{% endblock content %}
+
+
+<!-- <div style="display: inline;" ><a href="{% url 'rwlist' i.id%}" class="text-light " >&times;</a></div> -->
