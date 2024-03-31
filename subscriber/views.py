@@ -4,6 +4,9 @@ from django.views.generic import TemplateView,ListView,DetailView,View
 from account.models import Movie,Video,Watchlist,BackVideo,Cinema,Tvshow,WatchHistory
 from django.contrib import messages
 
+from django.contrib.auth.models import User
+
+
 
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
@@ -83,11 +86,23 @@ def addmylist(request, *args, **kwargs):
 
     return redirect('subhome')
 
-@method_decorator(decs,name='dispatch')
-class MylistView(ListView):
-    template_name='mylist.html'
-    queryset=Watchlist.objects.all()
-    context_object_name='myl'
+# @method_decorator(decs,name='dispatch')
+# class MylistView(ListView):
+#     template_name='mylist.html'
+#     queryset=Watchlist.objects.all()
+#     context_object_name='myl'
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+@method_decorator(decs, name='dispatch')
+class MylistView(LoginRequiredMixin, ListView):
+    template_name = 'mylist.html'
+    context_object_name = 'myl'
+
+    def get_queryset(self):
+        # Filter Watchlist objects by the currently logged-in user
+        return Watchlist.objects.filter(user=self.request.user)
+
 
 decs
 def removemylist(request,**kwargs):
